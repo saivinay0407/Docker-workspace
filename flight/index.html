@@ -1,1 +1,136 @@
-<h1>this html referes to the flight booking service</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyHigh | Premium Flight Booking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1436491865332-7a61a109c055?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-white py-4 px-6 shadow-sm flex justify-between items-center sticky top-0 z-50">
+        <div class="flex items-center gap-2 text-blue-600">
+            <i class="fas fa-plane-departure text-3xl"></i>
+            <span class="text-2xl font-black tracking-tighter italic text-slate-800">SKYHIGH</span>
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+            <a href="#" class="hover:text-blue-600 transition">Flights</a>
+            <a href="#" class="hover:text-blue-600 transition">Hotels</a>
+            <a href="#" class="hover:text-blue-600 transition">Check-in</a>
+            <a href="#" class="hover:text-blue-600 transition">Manage</a>
+        </div>
+        <button class="border-2 border-blue-600 text-blue-600 px-5 py-2 rounded-full font-bold hover:bg-blue-600 hover:text-white transition">Sign In</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient h-[400px] flex items-center justify-center text-center text-white px-4">
+        <div>
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">The World Awaits You</h2>
+            <p class="text-lg md:text-xl font-light opacity-90">Book global flights with exclusive deals and flexible dates.</p>
+        </div>
+    </header>
+
+    <!-- Search Card -->
+    <section class="container mx-auto -mt-24 px-4 pb-20">
+        <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Tabs -->
+            <div class="flex border-b">
+                <button class="px-8 py-4 bg-white border-t-4 border-blue-600 text-blue-600 font-bold uppercase text-sm">Round Trip</button>
+                <button class="px-8 py-4 bg-gray-50 text-gray-500 font-bold uppercase text-sm hover:bg-gray-100">One Way</button>
+                <button class="px-8 py-4 bg-gray-50 text-gray-500 font-bold uppercase text-sm hover:bg-gray-100">Multi-City</button>
+            </div>
+
+            <!-- Form -->
+            <form class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Origin -->
+                <div>
+                    <label class="block text-xs font-bold text-gray-400 uppercase mb-2">From</label>
+                    <div class="relative">
+                        <i class="fas fa-plane-takeoff absolute left-3 top-3.5 text-blue-500"></i>
+                        <input type="text" placeholder="NYC, New York" class="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                </div>
+
+                <!-- Destination -->
+                <div>
+                    <label class="block text-xs font-bold text-gray-400 uppercase mb-2">To</label>
+                    <div class="relative">
+                        <i class="fas fa-plane-arrival absolute left-3 top-3.5 text-blue-500"></i>
+                        <input type="text" placeholder="LHR, London" class="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+                    </div>
+                </div>
+
+                <!-- Dates -->
+                <div>
+                    <label class="block text-xs font-bold text-gray-400 uppercase mb-2">Departure - Return</label>
+                    <div class="relative">
+                        <i class="fas fa-calendar-alt absolute left-3 top-3.5 text-blue-500"></i>
+                        <input type="text" placeholder="Dec 12 - Dec 28" class="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" onfocus="(this.type='date')">
+                    </div>
+                </div>
+
+                <!-- Travelers/Class -->
+                <div>
+                    <label class="block text-xs font-bold text-gray-400 uppercase mb-2">Travelers & Class</label>
+                    <div class="relative">
+                        <i class="fas fa-user absolute left-3 top-3.5 text-blue-500"></i>
+                        <select class="w-full pl-10 pr-3 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none appearance-none">
+                            <option>1 Adult, Economy</option>
+                            <option>2 Adults, Economy</option>
+                            <option>1 Adult, Business</option>
+                            <option>1 Adult, First Class</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Search Button -->
+                <div class="md:col-span-4 flex justify-end">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-lg shadow-lg transform active:scale-95 transition-all">
+                        SHOW FLIGHTS <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="container mx-auto px-4 mb-20">
+        <h3 class="text-2xl font-bold text-slate-800 mb-8">Popular Destinations</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-xl h-64 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=500&q=60" alt="Paris" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <p class="text-sm opacity-80 uppercase font-bold tracking-widest">Europe</p>
+                        <h4 class="text-xl font-bold">Paris, France</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-xl h-64 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=60" alt="Tokyo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <p class="text-sm opacity-80 uppercase font-bold tracking-widest">Asia</p>
+                        <h4 class="text-xl font-bold">Tokyo, Japan</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </section>
+
+</body>
+</html>
