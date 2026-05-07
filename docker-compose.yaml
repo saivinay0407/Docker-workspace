@@ -1,0 +1,32 @@
+services:
+  bus_booking:
+    container_name: bus_container
+    build: ./bus/
+    ports:
+      - "1111:80"
+    volumes:
+      - busdata:/usr/share/nginx/html
+    networks:
+      - busnetwork
+
+
+  flight_boking:
+    container_name: flightcontainer
+    build: ./flight/
+    ports: 
+      - "1122:80"
+    volumes:
+      - flightdata:/usr/share/nginx/html
+    networks:
+      - flightnetwork
+
+volumes:
+  busdata:
+  flightdata:
+
+networks:
+  busnetwork:
+    driver: bridge
+  flightnetwork:
+    driver: bridge
+
