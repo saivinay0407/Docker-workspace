@@ -1,0 +1,2 @@
+docker stats container_name/id   # to check the container statistics like memory used, cpus used..etc
+docker inspect container_name/id # to check the configuration of the container
