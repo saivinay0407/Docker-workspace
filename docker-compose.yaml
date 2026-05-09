@@ -2,23 +2,36 @@ services:
   bus_booking:
     container_name: bus_container
     build: ./bus/
+    restart: always
     ports:
       - "1111:80"
     volumes:
       - busdata:/usr/share/nginx/html
     networks:
       - busnetwork
+    environment:
+        username: "sai vinay"
 
 
   flight_boking:
     container_name: flightcontainer
     build: ./flight/
+    restart: always
     ports: 
       - "1122:80"
     volumes:
       - flightdata:/usr/share/nginx/html
     networks:
       - flightnetwork
+    deploy:
+        resources:
+            limits:
+                cpus: "1.5"
+                memory: 521M
+            reservations:
+                cpus: "0.25"
+                memory: 256M
+    
 
 volumes:
   busdata:
