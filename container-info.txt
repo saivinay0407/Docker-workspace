@@ -1,2 +1,12 @@
 docker stats container_name/id   # to check the container statistics like memory used, cpus used..etc
 docker inspect container_name/id # to check the configuration of the container
+
+docker stack:
+  once cmpose file is written we can deploy the stack(services in compose)
+  -> docker stack deploy -c docker-compose.yaml
+  list the stack present in server
+  -> doker stack ls
+  list the nodes attached to the swarm
+  -> docker node ls
+  list the services
+  -> docker service ls
