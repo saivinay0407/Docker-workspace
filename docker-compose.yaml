@@ -10,7 +10,7 @@ services:
       - busnetwork
     environment:
         username: "sai vinay"
-     deploy:
+    deploy:
         replicas: 1
         resources:
             limits:
