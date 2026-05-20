@@ -1,7 +1,6 @@
 services:
   bus_booking:
-    container_name: bus_container
-    build: ./bus/
+    image: venkatasaivinay/bus:v1
     restart: always
     ports:
       - "1111:80"
@@ -11,11 +10,19 @@ services:
       - busnetwork
     environment:
         username: "sai vinay"
+     deploy:
+        replicas: 1
+        resources:
+            limits:
+                cpus: "1.5"
+                memory: 521M
+            reservations:
+                cpus: "0.25"
+                memory: 256M
 
 
   flight_boking:
-    container_name: flightcontainer
-    build: ./flight/
+    image: venkatasaivinay/flight:v1
     restart: always
     ports: 
       - "1122:80"
@@ -24,6 +31,7 @@ services:
     networks:
       - flightnetwork
     deploy:
+        replicas: 2
         resources:
             limits:
                 cpus: "1.5"
